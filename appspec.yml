@@ -1,0 +1,9 @@
+version: 0.0
+Resources:
+  - TargetService:
+      Type: AWS::ECS::Service
+      Properties:
+        TaskDefinition: "arn:aws:ecs:us-west-2:389560765612:task-definition/blue-green-family:2"
+        LoadBalancerInfo:
+          ContainerName: "nginx-website"
+          ContainerPort: 80
